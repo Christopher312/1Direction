@@ -1,5 +1,7 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
+apply plugin: 'com.android.application'
+
 buildscript {
     repositories {
         jcenter()
@@ -21,3 +23,18 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+repositories {
+    jcenter()
+    maven {
+        url "https://bezirk.artifactoryonline.com/bezirk/libs-release-local"
+    }
+}
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:24.1.1'
+    compile(group: 'com.bezirk', name: 'android-zirk-proxy', version: '3.0.2-3', ext: 'aar') {
+        transitive = true
+    }
+}
+

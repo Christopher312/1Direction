@@ -83,16 +83,6 @@
         android:onClick="finishTurn"/>
 
     <TextView
-        android:text="Your card:\n        2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="88dp"
-        android:id="@+id/textView5"
-        android:textSize="61sp"
-        android:layout_below="@+id/textView4"
-        android:layout_centerHorizontal="true" />
-
-    <TextView
         android:text="Round"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -111,4 +101,14 @@
         android:layout_toStartOf="@+id/textView4"
         android:layout_marginEnd="13dp"
         android:textSize="0sp" />
+
+    <TextView
+        android:text="Your card:\n        2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="62dp"
+        android:id="@+id/textView5"
+        android:textSize="61sp"
+        android:layout_below="@+id/textView4"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>

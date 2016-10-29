@@ -26,9 +26,20 @@ public class MakeMoveActivity extends AppCompatActivity {
         angles = intent.getIntArrayExtra("angles");
         scores = intent.getIntArrayExtra("scores");
         distances = intent.getIntArrayExtra("distances");
+
+        TextView playerNum = (TextView) findViewById(R.id.textView3);
+        playerNum.setText("Player " + player);
+
+        TextView roundNum = (TextView) findViewById(R.id.MMrounds);
+        roundNum.setText("Round " + round);
+
+        TextView scoreView = (TextView) findViewById(R.id.textView4);
+        scoreView.setText("");
+        for(int i=0;i<players;i++)
+            scoreView.append("Player " + i + ": " + scores[i] + "\n");
     }
 
-    public void FinishTurn(View view) {
+    public void finishTurn(View view) {
         int angle = Integer.parseInt(((EditText) findViewById(R.id.editText)).getText().toString());
         angles[player]=angle;
         int distance = Integer.parseInt(((EditText) findViewById(R.id.editText2)).getText().toString());
