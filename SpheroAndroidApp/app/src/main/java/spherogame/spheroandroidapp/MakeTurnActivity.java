@@ -20,6 +20,7 @@ import com.bezirk.middleware.messages.EventSet;
 public class MakeTurnActivity extends AppCompatActivity {
     int players,rounds,player,round;
     int[] angles,distances,scores;
+    Bezirk bezirk;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,7 +35,7 @@ public class MakeTurnActivity extends AppCompatActivity {
         distances = intent.getIntArrayExtra("distances");
 
         BezirkMiddleware.initialize(this, "macaronipenguins");
-        Bezirk bezirk = BezirkMiddleware.registerZirk("macaronipenguins");
+        bezirk = BezirkMiddleware.registerZirk("macaronipenguins");
         EventSet eventSet = new EventSet(ScoreUpdateEvent);
         eventSet.setEventReceiver(new EventSet.EventReceiver() {
             @Override
@@ -54,7 +55,6 @@ public class MakeTurnActivity extends AppCompatActivity {
     }
 
     public void makeTurn(View view) {
-        //TODO: SEND COMMANDS TO THE F*ING ROBOT
         if(round==rounds-1)
         {
             String victory = "Final Scores";
@@ -99,6 +99,10 @@ public class MakeTurnActivity extends AppCompatActivity {
         intent.putExtra("angles", angles);
         intent.putExtra("distances", distances);
         intent.putExtra("scores", scores);
+        MovementInstructionEvent e = new MovementInstructionEvent();
+        e.setAngles(angles);
+        e.setDists(distances);
+        bezirk.sendEvent(e);
         startActivity(intent);
     }
 }
