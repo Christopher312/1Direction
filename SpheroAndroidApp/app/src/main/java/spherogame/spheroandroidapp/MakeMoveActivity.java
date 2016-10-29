@@ -16,7 +16,9 @@ public class MakeMoveActivity extends AppCompatActivity {
         int card = (int) (Math.random()*6);
         TextView cardText = (TextView) findViewById(R.id.textView5);
         cardText.setText("Your card:\n        " + card);
-        //TODO: retrieve data
+        Intent intent = getIntent();
+        int players = intent.getIntExtra("players", 4);
+        int rounds = intent.getIntExtra("rounds", 5);
     }
 
     public void FinishTurn(View view) {
