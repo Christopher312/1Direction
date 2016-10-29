@@ -2,14 +2,19 @@
  * Created by graceyyu on 10/29/16.
  */
 import com.bezirk.middleware.Bezirk;
- import com.bezirk.middleware.addressing.ZirkEndPoint;
-import com.bezirk.middleware.java.proxy.BezirkMiddleware; 
+import com.bezirk.middleware.addressing.ZirkEndPoint;
+import com.bezirk.middleware.android.BezirkMiddleware;
 import com.bezirk.middleware.messages.Event;
- import com.bezirk.middleware.messages.EventSet;
+import com.bezirk.middleware.messages.EventSet;
+import spherogame.spheroandroidapp.MovementInstructionEvent;
+
+ 
+         
+         
 
 public class MovesListener {
     public MovesListener() {
-        BezirkMiddleware.initialize("macaronipenguins"); 
+        BezirkMiddleware.initialize(, "macaronipenguins"); 
         final Bezirk bezirk = BezirkMiddleware.registerZirk("Moves Listener");  
         EventSet turnEvents = new EventSet(MovementInstructionEvent.class); 
         turnEvents.setEventReceiver(new EventSet.EventReceiver()) { 

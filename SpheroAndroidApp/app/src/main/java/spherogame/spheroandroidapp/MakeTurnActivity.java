@@ -42,7 +42,7 @@ public class MakeTurnActivity extends AppCompatActivity {
             public void receiveEvent(Event event, ZirkEndPoint sender) {
                 if (event instanceof ScoreUpdateEvent) {
                     ScoreUpdateEvent update = (ScoreUpdateEvent) event;
-                    String s = (String) update.getScores();
+                    String s = update.getScores();
                     for(int x = 0; x<players; x++)
                     {
                         if(s.charAt(x)==1)
