@@ -26,6 +26,9 @@ public class MakeMoveActivity extends AppCompatActivity {
         angles = intent.getIntArrayExtra("angles");
         scores = intent.getIntArrayExtra("scores");
         distances = intent.getIntArrayExtra("distances");
+        TextView roundCount = (TextView) findViewById(R.id.MMrounds);
+        int r = round+1;
+        roundCount.setText("Round " + r);
     }
 
     public void FinishTurn(View view) {
