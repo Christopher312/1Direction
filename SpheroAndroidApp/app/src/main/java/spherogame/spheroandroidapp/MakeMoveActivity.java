@@ -19,7 +19,11 @@ public class MakeMoveActivity extends AppCompatActivity {
         cardText.setText(s);
         Intent intent = getIntent();
         int players = intent.getIntExtra("players", 4);
-        int rounds = intent.getIntExtra("rounds", 5);
+        int rounds = intent.getIntExtra("rounds", 5)-1;
+        TextView TV1 = (TextView) findViewById(R.id.MMround);
+        TV1.setText("Round "+rounds);
+        TextView TV2 = (TextView) findViewById(R.id.MMplayers);
+        TV2.setText("Players"+players);
     }
 
     public void FinishTurn(View view) {
@@ -27,6 +31,8 @@ public class MakeMoveActivity extends AppCompatActivity {
         int distance = Integer.parseInt(((EditText) findViewById(R.id.editText2)).getText().toString());
         Intent intent = new Intent(this, PassPhoneActivity.class);
         startActivity(intent);
+        TextView TV1 = (TextView) findViewById(R.id.MMround);
+        int rounds = Integer.parseInt(TV1.getText().toString());
         //TODO: Send data
     }
 }

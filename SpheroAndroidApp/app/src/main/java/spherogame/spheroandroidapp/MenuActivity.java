@@ -21,5 +21,6 @@ public class MenuActivity extends AppCompatActivity {
         Intent intent = new Intent(this, MakeMoveActivity.class);
         intent.putExtra("players", players);
         intent.putExtra("rounds", rounds);
+        startActivity(intent);
     }
 }
