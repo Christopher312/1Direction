@@ -10,18 +10,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="spherogame.spheroandroidapp.MainActivity">
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/numPlayers"
-        />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/rounds"
-        />
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -29,23 +17,6 @@
         android:textSize="50sp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Players"
-        android:textSize="30sp"
-        android:layout_below="@+id/numPlayers"
-        android:layout_alignParentEnd="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Rounds"
-        android:textSize="30sp"
-        android:id="@+id/textView3"
-        android:layout_below="@+id/numPlayers"
-        android:layout_alignParentStart="true" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -82,4 +53,21 @@
         android:layout_below="@+id/rounds"
         android:layout_alignParentStart="true"
         android:layout_marginTop="54dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Players"
+        android:textSize="30sp"
+        android:layout_above="@+id/players"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rounds"
+        android:textSize="30sp"
+        android:id="@+id/textView3"
+        android:layout_below="@+id/numPlayers"
+        android:layout_alignParentStart="true" />
 </RelativeLayout>
