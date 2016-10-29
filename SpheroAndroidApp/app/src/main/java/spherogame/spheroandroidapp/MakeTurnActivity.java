@@ -11,6 +11,12 @@ import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 
+import com.bezirk.middleware.Bezirk;
+import com.bezirk.middleware.addressing.ZirkEndPoint;
+import com.bezirk.middleware.android.BezirkMiddleware;
+import com.bezirk.middleware.messages.Event;
+import com.bezirk.middleware.messages.EventSet;
+
 public class MakeTurnActivity extends AppCompatActivity {
     int players,rounds,player,round;
     int[] angles,distances,scores;
@@ -26,6 +32,25 @@ public class MakeTurnActivity extends AppCompatActivity {
         angles = intent.getIntArrayExtra("angles");
         scores = intent.getIntArrayExtra("scores");
         distances = intent.getIntArrayExtra("distances");
+
+        BezirkMiddleware.initialize(this, "macaronipenguins");
+        Bezirk bezirk = BezirkMiddleware.registerZirk("macaronipenguins");
+        EventSet eventSet = new EventSet(ScoreUpdateEvent);
+        eventSet.setEventReceiver(new EventSet.EventReceiver() {
+            @Override
+            public void receiveEvent(Event event, ZirkEndPoint sender) {
+                if (event instanceof ScoreUpdateEvent) {
+                    ScoreUpdateEvent update = (ScoreUpdateEvent) event;
+                    String s = (String) update.scores;
+                    for(int x = 0; x<players; x++)
+                    {
+                        if(s.charAt(x)==1)
+                            scores[x]+=1;
+                    }
+                }
+            }
+        });
+        bezirk.subscribe(eventSet);
     }
 
     public void makeTurn(View view) {
@@ -65,13 +90,6 @@ public class MakeTurnActivity extends AppCompatActivity {
             popup.setContentView(containerLayout);
             popup.showAtLocation(containerLayout, Gravity.BOTTOM, 10, 10);
             popup.update(50, 50, 320, 90);
-        }
-        boolean goal=false;
-        if(goal)
-        {
-            scores[0]+=1;
-            round+=1;
-            //TODO: Reset board
         }
         Intent intent = new Intent(this, MakeMoveActivity.class);
         intent.putExtra("players", players);
