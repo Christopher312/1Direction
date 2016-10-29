@@ -2,6 +2,7 @@ package spherogame.spheroandroidapp;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import  android.EditText;
 
 public class MenuActivity extends AppCompatActivity {
 
