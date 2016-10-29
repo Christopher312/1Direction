@@ -22,7 +22,7 @@ public class MakeMoveActivity extends AppCompatActivity {
         players = intent.getIntExtra("players", 4);
         rounds = intent.getIntExtra("rounds", 5);
         player = intent.getIntExtra("player", 0)+1;
-        round = intent.getIntExtra("round", 0)+1;
+        round = intent.getIntExtra("round", 0);
         angles = intent.getIntArrayExtra("angles");
         scores = intent.getIntArrayExtra("scores");
         distances = intent.getIntArrayExtra("distances");
@@ -33,7 +33,7 @@ public class MakeMoveActivity extends AppCompatActivity {
         angles[player]=angle;
         int distance = Integer.parseInt(((EditText) findViewById(R.id.editText2)).getText().toString());
         distances[player]=distance;
-        if(player==players)
+        if(player==players-1)
         {
             Intent intent = new Intent(this, MakeTurnActivity.class);
             intent.putExtra("players", players);

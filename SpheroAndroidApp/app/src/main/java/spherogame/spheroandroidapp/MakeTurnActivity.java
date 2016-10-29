@@ -15,7 +15,7 @@ public class MakeTurnActivity extends AppCompatActivity {
         Intent intent = getIntent();
         players = intent.getIntExtra("players", 4);
         rounds = intent.getIntExtra("rounds", 5);
-        player = intent.getIntExtra("player", 0)+1;
+        player = 0;
         round = intent.getIntExtra("round", 0)+1;
         angles = intent.getIntArrayExtra("angles");
         scores = intent.getIntArrayExtra("scores");

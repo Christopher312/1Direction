@@ -16,7 +16,7 @@ public class PassPhoneActivity extends AppCompatActivity {
         players = intent.getIntExtra("players", 4);
         rounds = intent.getIntExtra("rounds", 5);
         player = intent.getIntExtra("player", 0);
-        round = intent.getIntExtra("rounds", 5);
+        round = intent.getIntExtra("round", 5);
         angles = intent.getIntArrayExtra("angles");
         scores = intent.getIntArrayExtra("scores");
         distances = intent.getIntArrayExtra("distances");
