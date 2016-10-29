@@ -42,6 +42,7 @@ public class MakeTurnActivity extends AppCompatActivity {
             button.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
                     Intent intent = new Intent(v.getContext(), MenuActivity.class);
+/*
                     intent.putExtra("players", players);
                     intent.putExtra("player", player);
                     intent.putExtra("rounds", rounds);
@@ -49,6 +50,7 @@ public class MakeTurnActivity extends AppCompatActivity {
                     intent.putExtra("angles", angles);
                     intent.putExtra("distances", distances);
                     intent.putExtra("scores", scores);
+*/
                     startActivity(intent);
                 }
             });
@@ -59,6 +61,7 @@ public class MakeTurnActivity extends AppCompatActivity {
             LinearLayout containerLayout = new LinearLayout(this);
             containerLayout.setOrientation(LinearLayout.VERTICAL);
             containerLayout.addView(msg, layoutParams);
+            containerLayout.addView(button, layoutParams);
             popup.setContentView(containerLayout);
             popup.showAtLocation(containerLayout, Gravity.BOTTOM, 10, 10);
             popup.update(50, 50, 320, 90);
