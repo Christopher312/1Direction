@@ -25,6 +25,16 @@
         android:layout_height="wrap_content"
         android:id="@+id/numPlayers"
         />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rounds"
+        android:textSize="15sp"/>
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/numRounds"
+        />
     <Button
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
