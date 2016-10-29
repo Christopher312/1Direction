@@ -16,6 +16,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".InstructionsActivity"></activity>
+        <activity android:name=".MenuActivity"></activity>
         <receiver android:name="com.bezirk.middleware.android.ZirkMessageReceiver">
             <intent-filter>
                 <action android:name="com.bezirk.middleware.broadcast" />
