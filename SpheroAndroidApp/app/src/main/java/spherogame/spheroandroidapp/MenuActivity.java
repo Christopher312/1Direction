@@ -3,6 +3,7 @@ package spherogame.spheroandroidapp;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import  android.widget.*;
 
 public class MenuActivity extends AppCompatActivity {
@@ -12,7 +13,7 @@ public class MenuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
     }
-    public void startGame()
+    public void startGame(View view)
     {
         EditText ET1 = (EditText) findViewById(R.id.players);
         EditText ET2 = (EditText) findViewById(R.id.rounds);
