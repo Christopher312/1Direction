@@ -36,7 +36,9 @@ public class MakeMoveActivity extends AppCompatActivity {
         TextView scoreView = (TextView) findViewById(R.id.textView4);
         scoreView.setText("");
         for(int i=0;i<players;i++)
-            scoreView.append("Player " + i + ": " + scores[i] + "\n");
+            scoreView.append("Player " + i + ": " + scores[i] + "\n");TextView roundCount = (TextView) findViewById(R.id.MMrounds);
+        int r = round+1;
+        roundCount.setText("Round " + r);
     }
 
     public void finishTurn(View view) {
