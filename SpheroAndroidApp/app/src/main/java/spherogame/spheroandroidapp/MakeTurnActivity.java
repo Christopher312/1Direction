@@ -30,7 +30,6 @@ public class MakeTurnActivity extends AppCompatActivity {
 
     public void makeTurn(View view) {
         //TODO: SEND COMMANDS TO THE F*ING ROBOT
-        //TODO: check victory conditions
         if(round==rounds-1)
         {
             String victory = "Final Scores";
@@ -66,6 +65,13 @@ public class MakeTurnActivity extends AppCompatActivity {
             popup.setContentView(containerLayout);
             popup.showAtLocation(containerLayout, Gravity.BOTTOM, 10, 10);
             popup.update(50, 50, 320, 90);
+        }
+        boolean goal=false;
+        if(goal)
+        {
+            scores[0]+=1;
+            round+=1;
+            //TODO: Reset board
         }
         Intent intent = new Intent(this, MakeMoveActivity.class);
         intent.putExtra("players", players);
