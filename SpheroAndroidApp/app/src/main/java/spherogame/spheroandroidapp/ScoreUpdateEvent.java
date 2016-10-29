@@ -1,4 +1,4 @@
-/**
+package spherogame.spheroandroidapp; /**
  * Created by graceyyu on 10/29/16.
  */
 import com.bezirk.middleware.messages.Event;

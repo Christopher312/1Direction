@@ -36,13 +36,13 @@ public class MakeTurnActivity extends AppCompatActivity {
 
         BezirkMiddleware.initialize(this, "macaronipenguins");
         bezirk = BezirkMiddleware.registerZirk("macaronipenguins");
-        EventSet eventSet = new EventSet(ScoreUpdateEvent);
+        EventSet eventSet = new EventSet(ScoreUpdateEvent.class);
         eventSet.setEventReceiver(new EventSet.EventReceiver() {
             @Override
             public void receiveEvent(Event event, ZirkEndPoint sender) {
                 if (event instanceof ScoreUpdateEvent) {
                     ScoreUpdateEvent update = (ScoreUpdateEvent) event;
-                    String s = (String) update.scores;
+                    String s = (String) update.getScores();
                     for(int x = 0; x<players; x++)
                     {
                         if(s.charAt(x)==1)
