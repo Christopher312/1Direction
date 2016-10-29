@@ -13,7 +13,7 @@ public class MenuActivity extends AppCompatActivity {
     }
     public void startGame()
     {
-        EditText ET1 = (EditText) findViewById(R.id.numPlayers);
+        EditText ET1 = (EditText) findViewById(R.id.players);
         int players = Integer.parseInt(ET1.getText().toString());
     }
 }
