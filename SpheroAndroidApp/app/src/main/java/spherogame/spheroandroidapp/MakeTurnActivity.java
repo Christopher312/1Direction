@@ -22,7 +22,7 @@ public class MakeTurnActivity extends AppCompatActivity {
         players = intent.getIntExtra("players", 4);
         rounds = intent.getIntExtra("rounds", 5);
         player = 0;
-        round = intent.getIntExtra("round", 0)+1;
+        round = intent.getIntExtra("round", 0);
         angles = intent.getIntArrayExtra("angles");
         scores = intent.getIntArrayExtra("scores");
         distances = intent.getIntArrayExtra("distances");
@@ -30,6 +30,7 @@ public class MakeTurnActivity extends AppCompatActivity {
 
     public void makeTurn(View view) {
         //TODO: SEND COMMANDS TO THE F*ING ROBOT
+        //TODO: check victory conditions
         if(round==rounds-1)
         {
             String victory = "Final Scores";
