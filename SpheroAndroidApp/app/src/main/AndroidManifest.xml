@@ -15,16 +15,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-<<<<<<< HEAD
         <activity android:name=".InstructionsActivity"></activity>
-=======
         <receiver android:name="com.bezirk.middleware.android.ZirkMessageReceiver">
             <intent-filter>
                 <action android:name="com.bezirk.middleware.broadcast" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </receiver>
->>>>>>> 611b2c89736caaecc04c7cb7d20c5a13ec540cdb
     </application>
 
 </manifest>
