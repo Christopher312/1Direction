@@ -15,14 +15,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".InstructionsActivity"></activity>
-        <activity android:name=".MenuActivity"></activity>
+        <activity android:name=".InstructionsActivity" />
+        <activity android:name=".MenuActivity" />
+
         <receiver android:name="com.bezirk.middleware.android.ZirkMessageReceiver">
             <intent-filter>
                 <action android:name="com.bezirk.middleware.broadcast" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </receiver>
+
+        <activity android:name=".CardActivity" />
+        <activity android:name=".MakeMoveActivity" />
+        <activity android:name=".PassPhoneActivity" />
+        <activity android:name=".SetPlayerActivity" />
+        <activity android:name=".MakeTurnActivity"></activity>
     </application>
 
 </manifest>
