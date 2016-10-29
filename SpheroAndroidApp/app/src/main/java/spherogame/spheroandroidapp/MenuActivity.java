@@ -10,4 +10,9 @@ public class MenuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
     }
+    public void startGame()
+    {
+        EditText ET1 = (EditText) findViewById(R.id.numPlayers);
+        int players = Integer.parseInt(ET1.getText().toString());
+    }
 }
