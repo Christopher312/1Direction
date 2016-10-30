@@ -1,8 +1,8 @@
-/**
+package spherogame.spheroandroidapp; /**
  * Created by graceyyu on 10/29/16.
  */
 import com.bezirk.middleware.Bezirk;
-import com.bezirk.middleware.java.proxy.BezirkMiddleware;
+import com.bezirk.middleware.android.BezirkMiddleware;
 import com.bezirk.middleware.messages.Event;
 
 import java.util.ArrayList;
@@ -21,8 +21,7 @@ public class TurnEvent extends Event {
     private ArrayList<Double[]> coords = new ArrayList<Double[]>();
 
     public TurnEvent(double[][] moves) {
-        BezirkMiddleware.initialize("macaronipenguins"); 
-        bezirk = BezirkMiddleware.registerZirk("Turn Event Zirk"); 
+        bezirk = BezirkMiddleware.registerZirk("macaronipenguins"); 
         double x = 0.0;
         double y = 0.0;
         for (int i = 0; i < moves.length; i++) {
@@ -80,8 +79,8 @@ public class TurnEvent extends Event {
     }
 
     public void scoredGoal(double x, double y) {
-        public double goalMinX = (MAP_X - GOAL_LENGTH) / 2;
-        public double goalMinY = (MAP_Y - GOAL_LENGTH) / 2;
+        double goalMinX = (MAP_X - GOAL_LENGTH) / 2;
+        double goalMinY = (MAP_Y - GOAL_LENGTH) / 2;
         if (x == 0) {
             if ((goalMinY <= y) && (y <= goalMinY + GOAL_LENGTH)) {
                 ScoreUpdateEvent event = new ScoreUpdateEvent(false, true, true, true);
@@ -98,15 +97,19 @@ public class TurnEvent extends Event {
             if ((goalMinY <= y) && (y <= goalMinY + GOAL_LENGTH)) {
                 ScoreUpdateEvent event = new ScoreUpdateEvent(true, true, false, true);
                 bezirk.sendEvent(event);
-        }
-        if (y == MAP_Y) {
-            if ((goalMinX <= x) && (x <= goalMinX + 5)) {
-                ScoreUpdateEvent event = new ScoreUpdateEvent(true, false, true, true);
-                bezirk.sendEvent(event);
+            }
+            if (y == MAP_Y) {
+                if ((goalMinX <= x) && (x <= goalMinX + 5)) {
+                    ScoreUpdateEvent event = new ScoreUpdateEvent(true, false, true, true);
+                    bezirk.sendEvent(event);
+                }
+            }
         }
     }
 
-    public ArrayList<Double[]> getCoords() {
+
+    public ArrayList<Double[]> getCoords()
+    {
         return coords;
     }
 }
