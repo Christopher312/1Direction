@@ -4,4 +4,6 @@
     <string name="instructions">Instructions</string>
     <string name="sphero_game">Sphero Game</string>
     <string name="card">"Your card:\n        "</string>
+    <string name="player">"Player "</string>
+    <string name="round">"Round "</string>
 </resources>

@@ -28,17 +28,17 @@ public class MakeMoveActivity extends AppCompatActivity {
         distances = intent.getIntArrayExtra("distances");
 
         TextView playerNum = (TextView) findViewById(R.id.textView3);
-        playerNum.setText("Player " + player);
+        playerNum.setText(getString(R.string.player) + player);
 
         TextView roundNum = (TextView) findViewById(R.id.MMrounds);
-        roundNum.setText("Round " + round);
+        roundNum.setText(getString(R.string.round) + round);
 
         TextView scoreView = (TextView) findViewById(R.id.textView4);
         scoreView.setText("");
         for(int i=0;i<players;i++)
-            scoreView.append("Player " + i + ": " + scores[i] + "\n");TextView roundCount = (TextView) findViewById(R.id.MMrounds);
+            scoreView.append("Player " + i + ": " + scores[i] + "\n");
         int r = round+1;
-        roundCount.setText("Round " + r);
+        roundNum.setText(getString(R.string.round) + r);
     }
 
     public void finishTurn(View view) {

@@ -58,10 +58,10 @@ public class MakeTurnActivity extends AppCompatActivity {
             public void receiveEvent(Event event, ZirkEndPoint sender) {
                 if (event instanceof MovementInstructionEvent) {
                     MovementInstructionEvent currentTurn = (MovementInstructionEvent) event;
-                    double[][] moves = new double[currentTurn.angles.length][2];
-                    for (int i = 0; i < currentTurn.angles.length; i++) {
-                        moves[i][0] = currentTurn.angles[i];
-                        moves[i][1] = currentTurn.distances[i];
+                    double[][] moves = new double[currentTurn.getAngles().length][2];
+                    for (int i = 0; i < currentTurn.getAngles().length; i++) {
+                        moves[i][0] = currentTurn.getAngles()[i];
+                        moves[i][1] = currentTurn.getDists()[i];
                     }
                     TurnEvent turn = new TurnEvent(moves, bezirk);
                     bezirk.sendEvent(turn);
