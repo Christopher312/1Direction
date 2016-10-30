@@ -52,21 +52,21 @@ public class MakeTurnActivity extends AppCompatActivity {
             }
         });
         bezirk.subscribe(eventSet);
-        EventSet turnEvents = new EventSet(MovementInstructionEvent.class); 
-        turnEvents.setEventReceiver(new EventSet.EventReceiver() { 
+        EventSet turnEvents = new EventSet(MovementInstructionEvent.class);
+        turnEvents.setEventReceiver(new EventSet.EventReceiver(){
             @Override
-            public void receiveEvent(Event event, ZirkEndPoint sender) { 
-                if (event instanceof MovementInstructionEvent) { 
-                    MovementInstructionEvent currentTurn = (MovementInstructionEvent) event; 
+            public void receiveEvent(Event event, ZirkEndPoint sender) {
+                if (event instanceof MovementInstructionEvent) {
+                    MovementInstructionEvent currentTurn = (MovementInstructionEvent) event;
                     double[][] moves = new double[currentTurn.angles.length][2];
                     for (int i = 0; i < currentTurn.angles.length; i++) {
                         moves[i][0] = currentTurn.angles[i];
                         moves[i][1] = currentTurn.distances[i];
                     }
-                    TurnEvent turn = new TurnEvent(moves);
+                    TurnEvent turn = new TurnEvent(moves, bezirk);
                     bezirk.sendEvent(turn);
-                } 
-            } 
+                }
+            }
         });
         bezirk.subscribe(turnEvents);
     }

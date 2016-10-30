@@ -2,12 +2,11 @@ package spherogame.spheroandroidapp; /**
  * Created by graceyyu on 10/29/16.
  */
 import com.bezirk.middleware.Bezirk;
-import com.bezirk.middleware.android.BezirkMiddleware;
 import com.bezirk.middleware.messages.Event;
 
 import java.util.ArrayList;
 
-public class TurnEvent extends Event {
+class TurnEvent extends Event {
     private Bezirk bezirk;
 
     private static final double MAP_X = 50;
@@ -18,15 +17,15 @@ public class TurnEvent extends Event {
 
     // private double angle;
     // private double distance;
-    private ArrayList<Double[]> coords = new ArrayList<Double[]>();
+    private ArrayList<Double[]> coords = new ArrayList<>();
 
-    public TurnEvent(double[][] moves) {
-        bezirk = BezirkMiddleware.registerZirk("macaronipenguins"); 
+    TurnEvent(double[][] moves, Bezirk bezirk) {
+        this.bezirk = bezirk;
         double x = 0.0;
         double y = 0.0;
-        for (int i = 0; i < moves.length; i++) {
-            x += moves[i][1] * Math.cos(Math.toRadians(moves[i][0])); 
-            y += moves[i][1] * Math.sin(Math.toRadians(moves[i][0]));
+        for (double[] move : moves) {
+            x += move[1] * Math.cos(Math.toRadians(move[0]));
+            y += move[1] * Math.sin(Math.toRadians(move[0]));
         }
         double angle = Math.atan(y / x);
         double distance = Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2));
